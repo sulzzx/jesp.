@@ -43,7 +43,6 @@ h1 {
     font-weight: 600;
     opacity: 0;
     animation: slideTop 1s ease forwards;
-    animation-delay: 2s;
     transition: 0.5s;
     cursor: pointer;
 }
