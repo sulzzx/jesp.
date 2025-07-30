@@ -30,26 +30,116 @@ body {
     text-decoration: none;
     font-weight: 600;
     cursor: default;
+    transform: translateY(0);
     opacity: 0;
     animation: slideRight 1s ease forwards;
 }
 
+.navbar {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  transform: translateY(0);
+}
+
 .navbar a {
-    display: inline-block;
-    font-size: 18px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 35px;
-    transition: 0.3s;
-    opacity: 0;
-    animation: slideTop 0.5s ease forwards;
-    animation-delay: calc(0.2s * var(--i));
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: 0.3s;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
 }
 
 .navbar a:hover,
 .navbar a.active {
     color: #ff8c00;
+}
+
+.toggle {
+  font-size: 18px;
+  color: #fff;
+  background: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+  transition: 0.5s;
+  vertical-align: middle;
+}
+
+.toggle:hover {
+  color: #ff8c00;
+}
+
+
+.idioma-container {
+  display: inline-block;
+  margin-left: 35px;
+  position: relative;
+}
+
+.lista {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 8px;
+  animation: fadeIn 1s ease forwards;
+  list-style: none;
+  width: 100%; /* ajuste importante */
+  min-width: 120px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: none;
+  padding: 0;  /* REMOVE o espaçamento interno da UL */
+}
+
+.lista.mostrar {
+  display: block;
+}
+
+.lista li {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.lista li a {
+  text-decoration: none;
+  color: #1f242d;
+  font-size: 14px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0; /* REMOVE padding lateral do link */
+  margin: 0;
+}
+
+
+
+.lista li:hover {
+  background: #f0f0f0;
+}
+
+
+
+.lista.mostrar li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.lista.mostrar li:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.lista.mostrar li:nth-child(3) {
+  animation-delay: 0.5s;
 }
 
 .home {
@@ -62,7 +152,17 @@ body {
 }
 
 .home-content {
-    max-width: 600px;   
+  max-width: 600px;
+  display: block;
+  flex-direction: column;
+  gap: -5px; /* tira completamente o espaçamento entre os filhos */
+}
+
+.home-content h3,
+.home-content h1,
+.home-content p {
+  margin: 0;
+  padding: 0;
 }
 
 .home-content h3 {
@@ -77,6 +177,7 @@ body {
     margin-bottom: 30px;
     animation: slideTop 1s ease forwards;
     animation-delay: 0.7s;
+    margin-bottom: 10px;
 }
 
 .home-content h3 span {
@@ -93,11 +194,12 @@ body {
 }
 
 .home-content p {
-   margin-top: 1px;
    font-size: 16px; 
    opacity: 0;
+   margin-top: 4px;
    animation: slideLeft 1s ease forwards;
    animation-delay: 1s;
+   margin-bottom: 1px;
 }
 
 .home-img img {
@@ -108,23 +210,28 @@ body {
     animation-delay: 2s, 3s;
 }
 
+.social-media {
+  margin-top: 1px;
+}
+
 .social-media a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    background: transparent;
-    border: 2px solid #ff8c00;
-    border-radius: 50%;
-    font-size: 20px;
-    color: #ff8c00;
-    text-decoration: none;
-    margin: 30px 15px 30px 0;
-    transition: 0.5s ease;
-    opacity: 0;
-    animation: slideLeft 1s ease forwards;
-    animation-delay: calc(0.2s * var(--i));
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  margin-top: 1px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #ff8c00;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #ff8c00;
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+  transition: 0.5s ease;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
 }
 
 .social-media a:hover {
@@ -161,6 +268,17 @@ body {
 
 
 /* keyframes */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 @keyframes slideRight {
     0%{
