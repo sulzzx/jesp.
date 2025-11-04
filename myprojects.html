@@ -15,7 +15,14 @@
             <a href="index.html" style="--i:1;" >Home</a>
             <a href="myprojects.html" style="--i:2;" class="active">My Projects</a>
             <a href="https://wa.me/5531993126733" style="--i:3;">Contact</a>
-            <a href="project2.html" style="--i:4;">Versão em Português</a>
+            <div class="idioma-container">
+                <button class="toggle" style="--i:4" onclick="mostrarLista()">Switch Language</button>
+                <ul class="lista" id="minhaLista">
+                    <li><a href="myprojects.html">English</a></li>
+                    <li><a href="project2.html">Português</a></li>
+                    <li lang="zh"><a href="project3.html">中文</a></li>
+                </ul>
+            </div>
         </nav>
         </header>
 
@@ -27,6 +34,8 @@
         <a href="https://nike-green-ten.vercel.app/"><button class="btn">Nike Air Jordan (not official)</button></a>
     </div>
     
+    <script src="lista.js"></script>
+
 </body>
 </html>
 
