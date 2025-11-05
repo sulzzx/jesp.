@@ -129,9 +129,14 @@ h1 {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
-    cursor: default;
+    cursor: pointer;
     opacity: 0;
     animation: slideRight 1s ease forwards;
+    transition: .5s;
+}
+
+.logo:hover{
+  color: #2600ff;
 }
 
 .toggle {
