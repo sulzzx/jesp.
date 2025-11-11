@@ -139,6 +139,15 @@ h1 {
   color: #2600ff;
 }
 
+.menu-toggle {
+  font-size: 24px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
 .toggle {
     font-size: 18px;
     color: #fff;
@@ -175,6 +184,171 @@ h1 {
     color: #2600ff;
 }
 
+
+/* ======================== */
+/* MEDIA QUERIES PARA MOBILE */
+/* ======================== */
+
+@media (max-width: 768px) {
+
+    body {
+        background-attachment: scroll; 
+    }
+
+    .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* *** CORREÇÃO: Adicione um z-index alto ao header 
+    *** para garantir que ele fique acima de tudo, 
+    *** especialmente o conteúdo da seção .home.
+    */
+    z-index: 1000; 
+}
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1100;
+    }
+
+  .navbar.active {
+  display: flex;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.navbar.active a {
+  color: #1f242d;
+}
+
+.toggle {
+  color: #1f242d;
+  animation: none;
+    opacity: 1;
+}
+
+    .logo {
+        font-size: 20px;
+        opacity: 0;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #0f1c2e;
+        border: 1px solid #009dcf;
+        border-radius: 8px;
+        padding: 10px 0;
+        width: 200px;
+        /* *** CORREÇÃO: Aumente o z-index da navbar 
+        *** para garantir que ela sobreponha o conteúdo principal.
+        *** O z-index 1010 é maior que o 1000 do header, o que é seguro.
+        */
+        z-index: 1010; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+  .navbar a {
+    margin: 10px 0;
+    font-size: 18px;
+    padding: 10px 20px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+    animation: none;
+    opacity: 1;
+  }
+
+    h1 {
+        margin-top: 200px;
+        font-size: 45px;
+        opacity: 0;
+        padding: 0 10px;
+    }
+
+    .button-container {
+        margin-top: 30px;
+        flex-direction: column;
+        gap: 15px; 
+    }
+
+    .btn {
+        opacity: 0;
+        width: 80%; 
+        max-width: 300px; 
+        padding: 10px 20px; 
+        font-size: 15px;
+    }
+    
+    .idioma-container {
+        margin-left: 15px; 
+    }
+
+    .toggle {
+        animation: none;
+        opacity: 1;
+    }
+
+    .lista {
+        min-width: 100px;
+        transform: translateX(-50%); 
+    }
+
+    body {
+    
+    /* *** CORREÇÃO: Força o background a cobrir a tela inteira (viewport) *** */
+    min-height: 100vh; 
+    
+    /* *** ADICIONAL: Mantém a imagem estática, cobrindo o viewport inteiro durante a rolagem *** */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+}
+
+@media (max-width: 480px) {
+    
+    h1 {
+        margin-top: 150px;
+        font-size: 36px; 
+    }
+    
+    .button-container {
+        margin-top: 20px;
+        flex-direction: column; 
+    }
+    
+    .btn {
+        width: 90%; 
+        max-width: 280px;
+    }
+
+    body {
+    
+    /* *** CORREÇÃO: Força o background a cobrir a tela inteira (viewport) *** */
+    min-height: 100vh; 
+    
+    /* *** ADICIONAL: Mantém a imagem estática, cobrindo o viewport inteiro durante a rolagem *** */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+}
 
 
 
