@@ -326,6 +326,8 @@ body {
     color: #fff;
     text-decoration: none;
     transition: background 0.3s;
+    animation: none;
+    opacity: 1;
   }
 
   .navbar a:hover {
@@ -443,6 +445,8 @@ body {
 
 .toggle {
   color: #1f242d;
+  animation: none;
+    opacity: 1;
 }
 
 }
@@ -543,6 +547,7 @@ body {
         transform: translateY(0);
     }
 }
+
 
 
 
