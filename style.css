@@ -65,7 +65,7 @@ body {
 }
 
 .toggle {
-  font-size: 18px;
+  font-size: 15px;
   color: #fff;
   background: none;
   border: none;
@@ -272,6 +272,184 @@ body {
     color: #1f242d;
     box-shadow: 0 0 20px #fff;
 }
+
+/* Estilos para telas menores que 768px (tablets e celulares) */
+@media (max-width: 768px) {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* *** CORREÇÃO: Adicione um z-index alto ao header 
+    *** para garantir que ele fique acima de tudo, 
+    *** especialmente o conteúdo da seção .home.
+    */
+    z-index: 1000; 
+}
+
+.idioma-container {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  text-align: left;
+}
+
+  .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #0f1c2e;
+        border: 1px solid #009dcf;
+        border-radius: 8px;
+        padding: 10px 0;
+        width: 200px;
+        /* *** CORREÇÃO: Aumente o z-index da navbar 
+        *** para garantir que ela sobreponha o conteúdo principal.
+        *** O z-index 1010 é maior que o 1000 do header, o que é seguro.
+        */
+        z-index: 1010; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+  .navbar a {
+    margin: 10px 0;
+    font-size: 18px;
+    padding: 10px 20px;
+    text-align: left;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .navbar a:hover {
+    background: #009dcf;
+    color: #1f242d;
+  }
+
+  @media (max-width: 768px) {
+  #minhaLista2 {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #0f1c2e;
+    border: 1px solid #009dcf;
+    border-radius: 8px;
+    padding: 10px 0;
+    width: 200px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  #minhaLista2.mostrar {
+    display: flex;
+  }
+}
+
+
+  .toggle {
+    display: block; /* mostra botão hamburguer */
+  }
+
+  .home {
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 5% 20px;
+    text-align: center;
+  }
+
+  .home-content h1 {
+    font-size: 36px;
+  }
+
+  .home-content h3 {
+    font-size: 24px;
+  }
+
+  .home-content p {
+    font-size: 14px;
+  }
+
+  .home-img img {
+    max-width: 250px;
+    margin: 20px auto 0;
+  }
+
+  .social-media {
+    margin-top: 20px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Estilos extras para telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+  .home-content h1 {
+    font-size: 28px;
+  }
+
+  .home-content h3 {
+    font-size: 20px;
+  }
+
+  .home-content p {
+    font-size: 12px;
+  }
+
+  .home-img img {
+    max-width: 200px;
+  }
+}
+
+.menu-toggle {
+  font-size: 24px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none; /* escondido por padrão */
+}
+
+/* Mostra o hamburguer apenas no mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1100; /* ✅ Já está correto: botão sempre acima */
+    }
+
+  .navbar.active {
+  display: flex;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.navbar.active a {
+  color: #1f242d;
+}
+
+.toggle {
+  color: #1f242d;
+}
+
+}
+
+
+
+
 
 
 
