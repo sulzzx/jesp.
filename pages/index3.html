@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sulz.</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+
+    <header class="header">        
+    <a href="" class="logo">sulz.</a>
+    <button class="menu-toggle" onclick="mostrarLista2()">☰</button>
+
+    <nav class="navbar">
+        <a href="index3.html" style="--i:1;" class="active">首页</a>
+        <a href="project3.html" style="--i:2;">我的项目</a>
+        <a href="https://wa.me/5531993126733" style="--i:3;">联系方式</a>
+        <div class="idioma-container">
+            <button class="toggle" style="--i:4" onclick="mostrarLista()">切换语言</button>
+            <ul class="lista" id="minhaLista">
+                <li><a href="index.html">English</a></li>
+                <li><a href="index2.html">Português</a></li>
+                <li lang="zh"><a href="index3.html">中文</a></li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+
+
+    <section class="home">
+        <div class="home-content">
+            <h3>你好，我的名字是</h3>
+            <h1>João Sulz</h1>
+            <h3>我是一名 <span class="multiple-text"></span></h3>
+            <p>我在 <a class="RedPeak" href="https://redpeakdigital.com.br/en/">RedPeak Digital</a> 从事数据分析工作。</p>
+            <div class="social-media">
+                <a href="https://www.instagram.com/sulzmgl/" style="--i:5;"><i class='bx bxl-instagram'></i></a>
+                <a href="https://x.com/sulzzxx" style="--i:6;"><i class='bx bxl-twitter' ></i></a>
+                <a href="https://github.com/sulzzx" style="--i:7;"><i class='bx bxl-github' ></i></a>
+                <a href="https://wa.me/5531993126733" style="--i:8;"><i class='bx bxl-whatsapp' ></i></a>
+            </div>
+            <a href="https://wa.me/5531993126733" class="btn">联系我</a>
+        </div>
+
+        <div class="home-img">
+            <img src="../images/database table.png" alt="">
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="../scripts/hello.js"></script>
+    <script src="../scripts/menutoggle.js"></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    
+</body>
+</html>

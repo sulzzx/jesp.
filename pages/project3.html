@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="../styles/projectss.css">
+</head>
+<body>
+
+    <header class="header">        
+        <a href="index.html" class="logo">sulz.</a>
+        <button class="menu-toggle" onclick="mostrarLista2()">☰</button>
+    
+        <nav class="navbar">
+            <a href="index3.html" style="--i:1;" >首页</a>
+            <a href="project3.html" style="--i:2;" class="active">我的项目</a>
+            <a href="https://wa.me/5531993126733" style="--i:3;">联系方式</a>
+            <div class="idioma-container">
+                <button class="toggle" style="--i:4" onclick="mostrarLista()">切换语言</button>
+                <ul class="lista" id="minhaLista">
+                    <li><a href="myprojects.html">English</a></li>
+                    <li><a href="project2.html">Português</a></li>
+                    <li lang="zh"><a href="project3.html">中文</a></li>
+                </ul>
+            </div>
+        </nav>
+        </header>
+
+    <h1>我的项目</h1>
+
+    <div class="button-container">
+        <a href="https://wind-mauve-phi.vercel.app/"><button class="btn">天气应用</button></a>
+        <a href="https://ajazz.vercel.app/"><button class="btn">黑爵 (本页面为非官方页面。)</button></a>
+        <a href="https://nike-green-ten.vercel.app/"><button class="btn">耐克乔丹运动鞋 (本页面为非官方页面。)</button></a>
+    </div>
+    
+    <script src="../scripts/lista.js"></script>
+    <script src="../scripts/menutoggle.js"></script>
+
+</body>
+</html>

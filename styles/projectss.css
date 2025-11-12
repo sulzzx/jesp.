@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: url(../images/2117716-3840x2160-desktop-4k-dark-wallpaper-photo.jpg);
+    background-size: cover;
+    background-position: center, no-repeat;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-top: 250px;
+    font-size: 75px;
+    opacity: 0;
+    animation: slideRight .9s ease forwards;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Center vertically, if needed */
+    gap: 10px; /* Space between buttons */
+    margin-top: 40px; /* Optional */
+}
+
+.btn {
+    display: inline-block; /* Ensure they behave like block elements */
+    padding: 12px 28px;
+    background: black;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #333;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.idioma-container {
+    display: inline-block;
+    margin-left: 35px;
+    position: relative;
+  }
+  
+  .lista {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 8px;
+    list-style: none;
+    min-width: 120px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    /* Desativa especificamente animações de slide */
+    animation-name: none !important; 
+  }
+  
+  .lista.mostrar {
+    opacity: 1;
+    visibility: visible;
+    /* Mantém sem animação de slide */
+    animation-name: none !important;
+  }
+  
+  .lista li {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    transition: background 0.3s ease;
+    /* Remove animações dos itens */
+    animation: none !important;
+  }
+  
+  .lista li a {
+    text-decoration: none;
+    color: #1f242d;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0; /* REMOVE padding lateral do link */
+    margin: 0;
+  }
+  
+  .lista li:hover {
+    background: #f0f0f0;
+  }
+
+.btn:hover {
+    background: #fff;
+    color: black;
+    box-shadow: 0 0 20px #fff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    transition: .5s;
+}
+
+.logo:hover{
+  color: #2600ff;
+}
+
+.menu-toggle {
+  font-size: 24px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.toggle {
+    font-size: 18px;
+    color: #fff;
+    background: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+    transition: 0.5s;
+    vertical-align: middle;
+  }
+  
+  .toggle:hover {
+    color: #2600ff;
+  }
+
+.navbar a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: 0.3s;
+    opacity: 0;
+    animation: slideTop 0.5s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #2600ff;
+}
+
+
+/* ======================== */
+/* MEDIA QUERIES PARA MOBILE */
+/* ======================== */
+
+@media (max-width: 768px) {
+
+    body {
+        background-attachment: scroll; 
+    }
+
+    .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* *** CORREÇÃO: Adicione um z-index alto ao header 
+    *** para garantir que ele fique acima de tudo, 
+    *** especialmente o conteúdo da seção .home.
+    */
+    z-index: 1000; 
+}
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1100;
+    }
+
+  .navbar.active {
+  display: flex;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+.navbar.active a {
+  color: #1f242d;
+}
+
+.toggle {
+  color: #1f242d;
+  animation: none;
+    opacity: 1;
+    vertical-align: middle;
+}
+
+    .logo {
+        font-size: 20px;
+        opacity: 0;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #0f1c2e;
+        border: 1px solid #009dcf;
+        border-radius: 8px;
+        padding: 10px 0;
+        width: 200px;
+        /* *** CORREÇÃO: Aumente o z-index da navbar 
+        *** para garantir que ela sobreponha o conteúdo principal.
+        *** O z-index 1010 é maior que o 1000 do header, o que é seguro.
+        */
+        z-index: 1010; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+  .navbar a {
+    margin: 10px 0;
+    font-size: 18px;
+    padding: 10px 20px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+    animation: none;
+    opacity: 1;
+  }
+
+    h1 {
+        margin-top: 200px;
+        font-size: 45px;
+        opacity: 0;
+        padding: 0 10px;
+    }
+
+    .button-container {
+        margin-top: 30px;
+        flex-direction: column;
+        gap: 15px; 
+    }
+
+    .btn {
+        opacity: 0;
+        width: 80%; 
+        max-width: 300px; 
+        padding: 10px 20px; 
+        font-size: 15px;
+    }
+    
+    .idioma-container {
+        margin-left: 15px; 
+    }
+
+    .toggle {
+        animation: none;
+        text-align: center;
+        opacity: 1;
+        vertical-align: middle;
+    }
+
+    .lista {
+        min-width: 100px;
+        transform: translateX(-50%); 
+    }
+
+    body {
+    
+    /* *** CORREÇÃO: Força o background a cobrir a tela inteira (viewport) *** */
+    min-height: 100vh; 
+    
+    /* *** ADICIONAL: Mantém a imagem estática, cobrindo o viewport inteiro durante a rolagem *** */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+}
+
+@media (max-width: 480px) {
+    
+    h1 {
+        margin-top: 150px;
+        font-size: 36px; 
+    }
+    
+    .button-container {
+        margin-top: 20px;
+        flex-direction: column; 
+    }
+    
+    .btn {
+        width: 90%; 
+        max-width: 280px;
+    }
+
+    body {
+    
+    /* *** CORREÇÃO: Força o background a cobrir a tela inteira (viewport) *** */
+    min-height: 100vh; 
+    
+    /* *** ADICIONAL: Mantém a imagem estática, cobrindo o viewport inteiro durante a rolagem *** */
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* keyframes */
+
+@keyframes slideRight {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+  }
+
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+ } 
+}
+
+@keyframes slideLeft {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+  }
+
+  100%{
+    transform: translateX(0);
+    opacity: 1;
+ } 
+}
+
+@keyframes slideTop {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+  }
+
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+ } 
+}
+
+@keyframes slideBottom {
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+  }
+
+  100%{
+    transform: translateY(0);
+    opacity: 1;
+ } 
+}
+
+@keyframes zoomIn {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+  }
+
+  100%{
+    transform: scale(1);
+    opacity: 1;
+ } 
+}
