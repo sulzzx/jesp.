@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fale Comigo</title>
+    <link rel="stylesheet" href="../styles/form.css">
+</head>
+<body>  
+
+    <header class="header">        
+    <a href="" class="logo">sulz.</a>
+    <button class="menu-toggle" onclick="mostrarLista2()">☰</button>
+
+    <nav class="navbar">
+        <a href="index2.html" style="--i:1;">Início</a>
+        <a href="project2.html" style="--i:2;">Meus Projetos</a>
+        <a href="formpt.html" style="--i:3;" class="active">Contato</a>
+        <div class="idioma-container">
+            <button class="toggle" style="--i:4" onclick="mostrarLista()">Mudar Idioma</button>
+            <ul class="lista" id="minhaLista">
+                <li><a href="form.html">English</a></li>
+                <li><a href="formpt.html">Português</a></li>
+                <li lang="zh"><a href="formzh.html">中文</a></li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <div class="contact-left-title">
+                <h2>Entre em contato</h2>
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="c94489ba-23ff-4b9d-ba99-7ea4d6af469c">
+            <input type="text" name="name" placeholder="Seu Nome" class="contact-inputs" id="input1" required>
+            <input type="email" name="email" placeholder="Seu Email" class="contact-inputs" id="input2" required>
+            <textarea name="message" placeholder="Sua Mensagem" class="contact-inputs" id="input3" required></textarea>  
+            <button type="submit" class="submit">Enviar<img src="../images/arrow_icon.png"></button>
+        </form>
+        <div class="contact-right">
+            <img class="form-img"   src="../images/Sem título.png">
+        </div>
+    </div>
+    
+</body>
+<script src=""></script>
+<script src="../scripts/menutoggle.js"></script>
+<script src="../scripts/lista.js"></script>
+</html>

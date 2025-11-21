@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我</title>
+    <link rel="stylesheet" href="../styles/form.css">
+</head>
+<body>  
+
+    <header class="header">        
+    <a href="" class="logo">sulz.</a>
+    <button class="menu-toggle" onclick="mostrarLista2()">☰</button>
+
+    <nav class="navbar">
+        <a href="index3.html" style="--i:1;">首页</a>
+        <a href="project3.html" style="--i:2;">我的项目</a>
+        <a href="formzh.html" style="--i:3;" class="active">联系</a>
+        <div class="idioma-container">
+            <button class="toggle" style="--i:4" onclick="mostrarLista()">切换语言</button>
+            <ul class="lista" id="minhaLista">
+                <li><a href="form.html">English</a></li>
+                <li><a href="formpt.html">Português</a></li>
+                <li lang="zh"><a href="formzh.html">中文</a></li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+            <div class="contact-left-title">
+                <h2>联系我们</h2>
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="c94489ba-23ff-4b9d-ba99-7ea4d6af469c">
+            <input type="text" name="name" placeholder="您的姓名" class="contact-inputs" id="input1" required>
+            <input type="email" name="email" placeholder="您的邮箱" class="contact-inputs" id="input2" required>
+            <textarea name="message" placeholder="您的留言" class="contact-inputs" id="input3" required></textarea>  
+            <button type="submit" class="submit">发送<img src="../images/arrow_icon.png"></button>
+        </form>
+        <div class="contact-right">
+            <img class="form-img" src="../images/Sem título.png">
+        </div>
+    </div>
+    
+</body>
+<script src=""></script>
+<script src="../scripts/menutoggle.js"></script>
+<script src="../scripts/lista.js"></script>
+</html>
